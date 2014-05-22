@@ -1,0 +1,20 @@
+package ${package}.service;
+
+import org.luis.basic.domain.GenericServiceBuilder;
+import org.luis.basic.domain.IGenericService;
+#foreach($beanName in $names)
+import ${package}.$beanName;
+#end
+public class ServiceFactory {
+
+#foreach($beanName in $names)
+	private static IGenericService<$beanName> ${policy.toLow(${beanName})}Service;
+	public static IGenericService<$beanName> get${beanName}Service(){
+		if(${policy.toLow(${beanName})}Service == null){
+			${policy.toLow(${beanName})}Service = GenericServiceBuilder.build(${beanName}.class);
+		}
+		return ${policy.toLow(${beanName})}Service;
+	}
+#end
+	
+}
