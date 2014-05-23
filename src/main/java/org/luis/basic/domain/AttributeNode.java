@@ -8,7 +8,6 @@ package org.luis.basic.domain;
 public class AttributeNode {
 
 	public AttributeNode() {
-
 	}
 
 	public AttributeNode(String name, String nextName,Boolean inList) {
