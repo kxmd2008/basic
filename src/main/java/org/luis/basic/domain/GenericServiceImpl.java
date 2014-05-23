@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.luis.basic.util.GenericsUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
@@ -25,16 +24,12 @@ public class GenericServiceImpl<T extends BaseEntity> extends
 	public static final String KEY_SPRING = "genericServiceImpl2";
 	public Class<T> entityClass;
 
-	@SuppressWarnings("unchecked")
 	public GenericServiceImpl() {
-		this.entityClass = (Class<T>) GenericsUtil
-				.getSuperClassGenricType(getClass());
 	}
 
 	/**
 	 * 添加Domain对象保存注解
 	 * 
-	 * @since 0.0.8.0
 	 */
 	@Override
 	public boolean save(T entity) {
