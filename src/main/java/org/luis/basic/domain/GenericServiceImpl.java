@@ -21,7 +21,7 @@ import org.springframework.util.Assert;
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 public class GenericServiceImpl<T extends BaseEntity> extends
 		GenericServiceAdapter<T> {
-	public static final String KEY_SPRING = "genericServiceImpl2";
+	public static final String KEY_SPRING = "genericServiceImpl";
 	public Class<T> entityClass;
 
 	public GenericServiceImpl() {
