@@ -24,48 +24,40 @@ public class SimpleMessageHead implements java.io.Serializable {
 	/**
 	 * API版本,定死暂不动
 	 * 
-	 * 
 	 */
 	private String api_version = "1.0";
 	/**
 	 * API作者,定死不动
-	 * 
 	 * 
 	 */
 	private String api_author = "NGBF";
 	/**
 	 * API接口代码,消息类型代码等
 	 * 
-	 * 
 	 */
 	private String api_code = "";
 	/**
 	 * 信息加密算法
-	 * 
 	 * 
 	 */
 	private String msg_encrypt = ENCRPT_NONE;
 	/**
 	 * 请求操作返回代码
 	 * 
-	 * 
 	 */
 	private String rep_code = "";
 	/**
 	 * 请求操作响应消息
-	 * 
 	 * 
 	 */
 	private String rep_message = "";
 	/**
 	 * 消息产生时间戳
 	 * 
-	 * 
 	 */
 	private Long timestamp;
 	/**
 	 * 消息产生者
-	 * 
 	 * 
 	 */
 	private String producer;
@@ -128,7 +120,6 @@ public class SimpleMessageHead implements java.io.Serializable {
 	/**
 	 * 构造函数
 	 * 
-	 * 
 	 */
 	public SimpleMessageHead() {
 
@@ -137,7 +128,6 @@ public class SimpleMessageHead implements java.io.Serializable {
 	/**
 	 * 构造函数
 	 * 
-	 * 
 	 */
 	public SimpleMessageHead(String api_code) {
 		this(api_code, ENCRPT_NONE);
@@ -145,7 +135,6 @@ public class SimpleMessageHead implements java.io.Serializable {
 
 	/**
 	 * 构造函数，指定编码和消息信息
-	 * 
 	 * 
 	 */
 	public SimpleMessageHead(String api_code, String rep_code,
@@ -159,7 +148,6 @@ public class SimpleMessageHead implements java.io.Serializable {
 	/**
 	 * 构造函数,指定rep_code和rep_messgae
 	 * 
-	 * @since 1.8.3.0
 	 * @param rep_code
 	 * @param rep_message
 	 */
