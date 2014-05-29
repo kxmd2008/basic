@@ -22,21 +22,6 @@ public class SimpleMessageHead implements java.io.Serializable {
 	public final static String ENCRPT_BASE64 = "1";
 
 	/**
-	 * API版本,定死暂不动
-	 * 
-	 */
-	private String api_version = "1.0";
-	/**
-	 * API作者,定死不动
-	 * 
-	 */
-	private String api_author = "NGBF";
-	/**
-	 * API接口代码,消息类型代码等
-	 * 
-	 */
-	private String api_code = "";
-	/**
 	 * 信息加密算法
 	 * 
 	 */
@@ -137,50 +122,11 @@ public class SimpleMessageHead implements java.io.Serializable {
 	 * 构造函数，指定编码和消息信息
 	 * 
 	 */
-	public SimpleMessageHead(String api_code, String rep_code,
+	public SimpleMessageHead(String rep_code,
 			String rep_message) {
-		this.api_code = api_code;
 		this.rep_code = rep_code;
 		this.rep_message = rep_message;
 		this.timestamp = System.currentTimeMillis();
-	}
-
-	/**
-	 * 构造函数,指定rep_code和rep_messgae
-	 * 
-	 * @param rep_code
-	 * @param rep_message
-	 */
-	public SimpleMessageHead(String rep_code, String rep_message) {
-		this("", rep_code, rep_message);
-	}
-
-	// //////////////////////////////////////////////////////////////////////
-	// //////////////////////////////////////////////////////////////////////
-	// //////////////////////////////////////////////////////////////////////
-
-	public String getApi_version() {
-		return api_version;
-	}
-
-	public void setApi_version(String api_version) {
-		this.api_version = api_version;
-	}
-
-	public String getApi_author() {
-		return api_author;
-	}
-
-	public void setApi_author(String api_author) {
-		this.api_author = api_author;
-	}
-
-	public String getApi_code() {
-		return api_code;
-	}
-
-	public void setApi_code(String api_code) {
-		this.api_code = api_code;
 	}
 
 	public String getMsg_encrypt() {
