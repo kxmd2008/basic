@@ -129,6 +129,8 @@ public interface IGenericService<T extends BaseEntity> {
 	 * @return
 	 */
 	public List<T> findByAttributes(FilterAttributes attributes) throws RuntimeException;
+	
+	public T findOneByFilter(FilterAttributes attrs);
 
 	/**
 	 * 根据FilterAttributes接口类 + listFilterPolicy实现数据的查询,查找失败的话，返回EmptyList

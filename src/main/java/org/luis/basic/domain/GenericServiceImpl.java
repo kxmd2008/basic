@@ -19,8 +19,8 @@ import org.springframework.util.Assert;
  */
 @Service
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
-public class GenericServiceImpl<T extends BaseEntity> extends
-		GenericServiceAdapter<T> {
+public class GenericServiceImpl<T extends BaseEntity> implements
+		IGenericService<T> {
 	public static final String KEY_SPRING = "genericServiceImpl";
 	public Class<T> entityClass;
 
@@ -212,6 +212,16 @@ public class GenericServiceImpl<T extends BaseEntity> extends
 	}
 
 	@Override
+	public T findOneByFilter(FilterAttributes attrs) {
+		List<T> list = findByAttributes(attrs);
+		Assert.notNull(list);
+		if (list.size() > 0) {
+			return list.get(0);
+		}
+		return null;
+	}
+
+	@Override
 	public List<T> findBySql(String sql) {
 		try {
 			return getGenericDao().findBySql(sql);
@@ -266,6 +276,11 @@ public class GenericServiceImpl<T extends BaseEntity> extends
 	@Override
 	public void setEntityClass(Class<T> entityClass) {
 		this.genericDao.setEntityClass(entityClass);
+	}
+
+	@Override
+	public String getGenericDaoSpringKey() {
+		return null;
 	}
 
 }

@@ -41,11 +41,6 @@ public class SimpleMessageHead implements java.io.Serializable {
 	 * 
 	 */
 	private Long timestamp;
-	/**
-	 * 消息产生者
-	 * 
-	 */
-	private String producer;
 
 	/**
 	 * 400 参数错误,必要参数缺失，参数格式错误; 401 没有权限; 500 服务端错误; 200 接口请求成功;
@@ -159,14 +154,6 @@ public class SimpleMessageHead implements java.io.Serializable {
 
 	public void setTimestamp(Long timestamp) {
 		this.timestamp = timestamp;
-	}
-
-	public String getProducer() {
-		return producer;
-	}
-
-	public void setProducer(String producer) {
-		this.producer = producer;
 	}
 
 }
