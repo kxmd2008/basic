@@ -17,11 +17,11 @@ import org.springframework.util.Assert;
  * 
  * @param <T>
  */
-@Service
+@Service(IGenericService.KEY_SPRING)
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 public class GenericServiceImpl<T extends BaseEntity> implements
 		IGenericService<T> {
-	public static final String KEY_SPRING = "genericServiceImpl";
+	
 	public Class<T> entityClass;
 
 	public GenericServiceImpl() {

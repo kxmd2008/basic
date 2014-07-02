@@ -10,6 +10,7 @@ import java.util.List;
  */
 public interface IGenericService<T extends BaseEntity> {
 
+	public static final String KEY_SPRING = "genericService";
 	
 	public void setEntityClass(Class<T> entityClass);
 	/**
