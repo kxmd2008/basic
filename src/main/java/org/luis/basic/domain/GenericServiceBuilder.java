@@ -23,8 +23,7 @@ public final class GenericServiceBuilder {
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T extends BaseEntity> IGenericService<T> build(Class<T> clazz) {
-		IGenericService<T> service = SpringContextFactory.getSpringBean(
-				GenericServiceImpl.KEY_SPRING, IGenericService.class);
+		IGenericService<T> service = SpringContextFactory.getSpringBean(IGenericService.class);
 		service.setEntityClass(clazz);
 		return service;
 	}
