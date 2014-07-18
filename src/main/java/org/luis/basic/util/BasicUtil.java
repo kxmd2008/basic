@@ -4,6 +4,9 @@ import java.io.IOException;
 
 public class BasicUtil {
 	
+	/**
+	 * 返回WebApp的物理地址
+	 */
 	public static String getWebAppPath() {
 		String path = "";
 		try {
