@@ -186,7 +186,7 @@ public interface IGenericService<T extends BaseEntity> {
 	 * @param hql
 	 * @return
 	 */
-	public Object findByHql(String hql);
+	public List<?> findByHql(String hql);
 
 	/**
 	 * 执行HQL的Update或者Delete操作

@@ -102,7 +102,7 @@ public abstract class GenericServiceAdapter<T extends BaseEntity> implements
 	}
 
 	@Override
-	public Object findByHql(String hql) {
+	public List<?> findByHql(String hql) {
 		
 		return null;
 	}

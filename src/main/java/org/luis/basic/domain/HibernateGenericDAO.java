@@ -460,7 +460,7 @@ public class HibernateGenericDAO<T, ID extends Serializable> extends
 		this.getHibernateTemplate().bulkUpdate(hql);
 	}
 
-	public Object findByHql(String hql) {
+	public List<?> findByHql(String hql) {
 		return this.getHibernateTemplate().find(hql);
 	}
 

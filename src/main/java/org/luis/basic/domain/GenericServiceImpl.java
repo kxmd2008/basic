@@ -192,7 +192,7 @@ public class GenericServiceImpl<T extends BaseEntity> implements
 	}
 
 	@Override
-	public Object findByHql(String hql) {
+	public List<?> findByHql(String hql) {
 		try {
 			return getGenericDao().findByHql(hql);
 		} catch (Exception e) {

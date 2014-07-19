@@ -19,7 +19,7 @@ public interface GenericDAO<T, ID extends Serializable> {
 	 * @param hql
 	 * @
 	 */
-	Object findByHql(String hql)  ;
+	List<?> findByHql(String hql)  ;
 	
 	/**
 	 * 进行Update或Delete操作
