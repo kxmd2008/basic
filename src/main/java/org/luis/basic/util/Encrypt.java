@@ -110,5 +110,9 @@ public class Encrypt {
 	public String genrate() {
 		return this.generateText;
 	}
+	
+	public static Encrypt init(String txt){
+		return new Encrypt(txt);
+	}
 
 }
