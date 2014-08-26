@@ -63,46 +63,11 @@ public class SimpleMessageHead implements java.io.Serializable {
 	public final static String REP_SERVICE_UNAVAILABLE = "503";
 
 	/**
-	 * 消息头对象
-	 * 
-	 */
-	public final static SimpleMessageHead OK = new SimpleMessageHead("200",
-			"请求成功");
-	public final static SimpleMessageHead CREATED = new SimpleMessageHead(
-			"201", "请求已创建");
-	public final static SimpleMessageHead ACCEPTED = new SimpleMessageHead(
-			"202", "请求已接受");
-	public final static SimpleMessageHead PARAMETER_ERROR = new SimpleMessageHead(
-			"400", "请求参数错误");
-	public final static SimpleMessageHead UNAUTHORIZED = new SimpleMessageHead(
-			"401", "未授权");
-	public final static SimpleMessageHead FORBIDDEN = new SimpleMessageHead(
-			"403", "资源访问被禁止");
-	public final static SimpleMessageHead NOT_FOUND = new SimpleMessageHead(
-			"404", "资源未找到");
-	public final static SimpleMessageHead METHOD_NOT_ALLOWED = new SimpleMessageHead(
-			"405", "方法未允许");
-	public final static SimpleMessageHead NOT_ACCEPTABLE = new SimpleMessageHead(
-			"406", "资源不接受");
-	public final static SimpleMessageHead REQUEST_TIMEOUT = new SimpleMessageHead(
-			"408", "请求超时");
-	public final static SimpleMessageHead CONFLICT = new SimpleMessageHead(
-			"409", "请求冲突");
-	public final static SimpleMessageHead SERVICE_ERROR = new SimpleMessageHead(
-			"500", "请求服务出现错误");
-	public final static SimpleMessageHead NOT_IMPLEMENTED = new SimpleMessageHead(
-			"501", "请求未实现");
-	public final static SimpleMessageHead BAD_GATEWAY = new SimpleMessageHead(
-			"502", "错误的网关");
-	public final static SimpleMessageHead SERVICE_UNAVAILABLE = new SimpleMessageHead(
-			"503", "该服务未实现");
-
-	/**
 	 * 构造函数
 	 * 
 	 */
 	public SimpleMessageHead() {
-
+		this.rep_code = REP_OK;
 	}
 
 	/**
