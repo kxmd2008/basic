@@ -128,10 +128,15 @@
 			<artifactId>hibernate-annotations</artifactId>
 			<version>3.3.1.GA</version>
 		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.apache.ibatis</groupId> -->
+<!-- 			<artifactId>ibatis-sqlmap</artifactId> -->
+<!-- 			<version>2.3.4.726</version> -->
+<!-- 		</dependency> -->
 		<dependency>
-			<groupId>org.apache.ibatis</groupId>
-			<artifactId>ibatis-sqlmap</artifactId>
-			<version>2.3.4.726</version>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.2.2</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
