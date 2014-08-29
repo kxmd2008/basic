@@ -5,8 +5,6 @@ import java.util.List;
 
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 
-import com.ibatis.sqlmap.client.SqlMapClient;
-
 /**
  * @Description:
  * @author guoliang.li
@@ -33,7 +31,7 @@ public final class IbatisBuilder {
 	 * @param id
 	 * @return
 	 */
-	public static Object queryForObject(String sqlId, String id)
+	public static Object queryForObject(String sqlId, Long id)
 			throws SQLException {
 		return getSqlMapClient().queryForObject(sqlId, id);
 	}
