@@ -1,11 +1,9 @@
 package org.luis.basic.rest.model;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import net.sf.json.JSONObject;
 
 /**
  * 简单业务请求消息对象,可以转化成为Json数据格式
@@ -83,21 +81,8 @@ public class SimpleMessage<T> implements java.io.Serializable {
 	 * 将对象生成Json对象数据
 	 */
 	public String toJson() {
-		Gson gson = new Gson();
-		return gson.toJson(this);
-	}
-
-	/**
-	 * 绑定json数据为SimpleMessage,参见NtpHelper同名方法
-	 * 
-	 * @param json
-	 * @return
-	 */
-	public static SimpleMessage<?> bind(String json) {
-		Gson gson = new Gson();
-		Type type = new TypeToken<SimpleMessage<?>>() {
-		}.getType();
-		return gson.fromJson(json, type);
+		JSONObject json = JSONObject.fromObject(this);
+		return json.toString();
 	}
 
 	/**
