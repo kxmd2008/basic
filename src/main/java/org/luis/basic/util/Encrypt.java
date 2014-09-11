@@ -13,8 +13,8 @@ package org.luis.basic.util;
 public class Encrypt {
 
 	public static void main(String[] args) {
-		String plain = "This is a secret...";
-		Encrypt encrypt = new Encrypt(plain).mixup("12345");
+		String plain = "test123";
+		Encrypt encrypt = Encrypt.init(plain).md5();
 		System.out.println(encrypt.genrate());
 		String secret = encrypt.base64().md5().des().genrate();
 		
