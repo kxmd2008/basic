@@ -179,9 +179,20 @@ public final class DateUtil {
 			return null;
 		}
 	}
+	
+	
+	/**
+	 * 获得当前年
+	 * @return
+	 */
+	public static String getYear(){
+		Calendar c = Calendar.getInstance();
+		return c.get(Calendar.YEAR) + "";
+	}
 
 	public static void main(String args[]) {
 		System.out.println(preDay(new Date(), 30));
+		System.out.println(getYear());
 	}
 
 }
