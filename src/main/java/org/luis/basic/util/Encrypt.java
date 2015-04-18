@@ -2,10 +2,10 @@ package org.luis.basic.util;
 
 
 /**
- * NGBF加密实现，链式方法实现
+ * 加密实现
  * 
  * @description
- * @author boqing.shen
+ * @author guoliang.li
  * @date 2013-8-13 下午2:15:24
  * @since 1.6.4.0
  */
@@ -13,7 +13,7 @@ package org.luis.basic.util;
 public class Encrypt {
 
 	public static void main(String[] args) {
-		String plain = "test123";
+		String plain = "admin123";
 		Encrypt encrypt = Encrypt.init(plain).md5();
 		System.out.println(encrypt.genrate());
 		String secret = encrypt.base64().md5().des().genrate();

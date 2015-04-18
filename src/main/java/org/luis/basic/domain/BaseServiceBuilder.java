@@ -15,7 +15,7 @@ import org.luis.basic.util.SpringContextFactory;
  * }<br/>
  * @author guoliang.li
  */
-public final class GenericServiceBuilder {
+public final class BaseServiceBuilder {
 
 	/**
 	 * 根据Bean类型产生相应的Service

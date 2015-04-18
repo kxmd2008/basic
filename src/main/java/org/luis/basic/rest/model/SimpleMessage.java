@@ -1,9 +1,12 @@
 package org.luis.basic.rest.model;
 
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.sf.json.JSONObject;
+import org.codehaus.jackson.JsonFactory;
+import org.codehaus.jackson.JsonGenerator;
+import org.codehaus.jackson.map.ObjectMapper;
 
 /**
  * 简单业务请求消息对象,可以转化成为Json数据格式
@@ -81,8 +84,18 @@ public class SimpleMessage<T> implements java.io.Serializable {
 	 * 将对象生成Json对象数据
 	 */
 	public String toJson() {
-		JSONObject json = JSONObject.fromObject(this);
-		return json.toString();
+		ObjectMapper mapper = new ObjectMapper();
+		StringWriter ws = new StringWriter();
+		JsonGenerator gen;
+		try {
+			gen = new JsonFactory().createJsonGenerator(ws);
+			mapper.writeValue(gen, this);
+			gen.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+//		JSONObject json = JSONObject.fromObject(this);
+		return ws.toString();
 	}
 
 	/**
