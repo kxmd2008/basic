@@ -106,7 +106,7 @@ public class ProcessContext implements java.io.Serializable {
 			}
 			mergeArgsMap();
 		} else {
-			extProperties = new PropertiesConfiguration();
+			this.extProperties = new PropertiesConfiguration();
 		}
 		
 	}
