@@ -2,6 +2,7 @@ package org.luis.basic.util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 
 public class StringUtils {
@@ -30,4 +31,21 @@ public class StringUtils {
 		}
 		return list;
 	}
+	
+	public static String[] stringToArray(String source) {
+		return stringToArray(source, ",");
+	}
+
+	public static String[] stringToArray(String source, String seperate) {
+		int intNum;
+		String[] strArray;
+		StringTokenizer strcStr = new StringTokenizer(source, seperate);
+		intNum = strcStr.countTokens();
+		strArray = new String[intNum];
+		for (int i = 0; i < intNum; i++) {
+			strArray[i] = strcStr.nextToken();
+		}
+		return (strArray);
+	}
+
 }
