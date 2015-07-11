@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.log4j.Logger;
 import org.luis.basic.util.BasicUtil;
 import org.luis.basic.util.StringUtils;
@@ -94,15 +95,20 @@ public class ProcessContext implements java.io.Serializable {
 	public void init(Configuration properties, Configuration extProperties) {
 		this.properties = properties;
 		this.extProperties = extProperties;
-		Iterator<String> it = extProperties.getKeys();
-		while (it.hasNext()) {
-			String key = it.next();
-			if (properties.containsKey(key)) {
-				properties.clearProperty(key);
+		if(extProperties != null){
+			Iterator<String> it = extProperties.getKeys();
+			while (it.hasNext()) {
+				String key = it.next();
+				if (properties.containsKey(key)) {
+					properties.clearProperty(key);
+				}
+				properties.addProperty(key, extProperties.getProperty(key));
 			}
-			properties.addProperty(key, extProperties.getProperty(key));
+			mergeArgsMap();
+		} else {
+			extProperties = new PropertiesConfiguration();
 		}
-		mergeArgsMap();
+		
 	}
 
 	/**
