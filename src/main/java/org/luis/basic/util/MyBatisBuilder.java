@@ -134,6 +134,9 @@ public final class MyBatisBuilder {
 //	private static SqlSessionFactory sqlSessionFactory;
 
 	private static SqlSessionTemplate sqlSessionTemplate;
+	static {
+		sqlSessionTemplate = SpringContextFactory.getSpringBean(SqlSessionTemplate.class);
+	}
 
 }
 
