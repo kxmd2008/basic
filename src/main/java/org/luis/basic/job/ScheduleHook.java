@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * 
  * @description
  */
-@Component("ngbfScheduleProcessHook")
+@Component("scheduleProcessHook")
 public class ScheduleHook {
 
 	private Logger logger = Logger.getLogger(getClass());
