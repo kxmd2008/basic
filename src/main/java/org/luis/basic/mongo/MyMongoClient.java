@@ -12,7 +12,6 @@ import javax.annotation.PostConstruct;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 import com.mongodb.BasicDBObject;
@@ -25,7 +24,6 @@ import com.mongodb.MapReduceOutput;
 import com.mongodb.MongoClient;
 import com.mongodb.ReadPreference;
 
-@Component(IMongoClient.KEY_SPRING)
 public class MyMongoClient implements IMongoClient {
 
 	private MongoClient mongoClient = null;
