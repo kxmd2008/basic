@@ -1,5 +1,6 @@
 package org.luis.basic.tag;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.jsp.JspException;
@@ -12,16 +13,19 @@ import javax.servlet.jsp.JspException;
  */
 public class DatetimeTag extends BaseTag {
 
+	private static final long serialVersionUID = 3048873637581420438L;
 	private Object datetime;
-	private String partten;
+	private String pattern;
 
 	public int doEndTag() throws JspException {
 		String temp = null;
-		if(datetime instanceof Date){
-			System.out.println("Date");
-		} else if(datetime instanceof Long){
-			System.out.println("Long");
+		sdf.applyPattern(pattern);
+		if (datetime instanceof Date) {
+			temp = sdf.format(datetime);
+		} else if (datetime instanceof Long) {
+			temp = sdf.format(new Date((Long) datetime));
 		}
+		writeMessage(temp);
 		return EVAL_PAGE;
 	}
 
@@ -29,8 +33,10 @@ public class DatetimeTag extends BaseTag {
 		this.datetime = datetime;
 	}
 
-	public void setPartten(String partten) {
-		this.partten = partten;
+	public void setPattern(String pattern) {
+		this.pattern = pattern;
 	}
+
+	private SimpleDateFormat sdf = new SimpleDateFormat();
 
 }

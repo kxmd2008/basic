@@ -17,30 +17,27 @@ public class DictManager {
 	@SuppressWarnings("unchecked")
 	private void init() {
 		String path = getClass().getClassLoader().getResource("/").getPath() + "Dict.xml";
-		File filePath = new File(path);
-		File[] files = filePath.listFiles();
-		for (File file : files) {
-			SAXReader saxReader = new SAXReader();
-			Document document;
-			try {
-				document = saxReader.read(file);
-				Element root = document.getRootElement();
-				List<Element> list = root.elements();
-				for (Element dict : list) {
-					String code = trim(dict.attributeValue("code"));
-					if(map.get(code) == null){
-						map.put(code, new HashMap<String, String>());
-					}
-					List<Element> items = dict.elements();
-					for (Element item : items) {
-						String label = trim(item.attributeValue("label"));
-						String value = trim(item.attributeValue("value"));
-						map.get(code).put(value, label);
-					}
+		File file = new File(path);
+		SAXReader saxReader = new SAXReader();
+		Document document;
+		try {
+			document = saxReader.read(file);
+			Element root = document.getRootElement();
+			List<Element> list = root.elements();
+			for (Element dict : list) {
+				String code = trim(dict.attributeValue("code"));
+				if(map.get(code) == null){
+					map.put(code, new HashMap<String, String>());
 				}
-			} catch (DocumentException e) {
-				e.printStackTrace();
+				List<Element> items = dict.elements();
+				for (Element item : items) {
+					String label = trim(item.attributeValue("label"));
+					String value = trim(item.attributeValue("value"));
+					map.get(code).put(value, label);
+				}
 			}
+		} catch (DocumentException e) {
+			e.printStackTrace();
 		}
 		
 	}
