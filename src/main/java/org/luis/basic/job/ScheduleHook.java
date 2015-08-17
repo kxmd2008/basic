@@ -31,7 +31,6 @@ public class ScheduleHook {
 			// 读取config.properties配置文件schedule.job,获取Job信息
 			String[] jobs = context
 					.getStrPropValues(ProcessContext.PROPKEY_SCHEDULE_JOB);
-
 			for (String jobParam : jobs) {
 				// 每一个jobParam是以ID;ClassName;CronExpression为描述的,以分号隔开
 				String[] jd = StringUtils.stringToArray(jobParam, ";");
