@@ -3,6 +3,12 @@ package org.luis.basic.rest.model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * datatable对象，分页，及页面使用
+ * @author Luis
+ * @date 2015-8-17 下午9:33:23
+ * @param <T>
+ */
 public class DatatableBean<T> {
 	private Integer draw;
 	private Integer recordsTotal;
